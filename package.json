@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/bwinkers/activerules-views/issues"
   },
-  "homepage": "https://github.com/bwinkers/activerules-views#readme"
+  "homepage": "https://github.com/bwinkers/activerules-views#readme",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "coveralls": "^2.13.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "sinon": "^3.2.1"
+  }
 }
