@@ -55,4 +55,76 @@ describe('Module - activerules-views', function() {
     });
   });
   
+  describe('Given a request for a valid site home page and an overidden layout', function() {
+    
+    beforeEach(function(done) {
+        /* 
+         * before each test, reset the REQUEST and RESPONSE variables 
+         * to be send into the middle ware
+        **/
+        request = httpMocks.createRequest({
+            method: 'GET',
+            url: '/',
+            headers: {
+                host: 'www.example.com'
+            }
+        });
+        response = httpMocks.createResponse();
+        response.locals = {
+            site: {
+              site: 'example',
+              view: {
+                layout: 'mobile_first'
+              }
+            }
+          };
+        response.marko = function(template, data) {
+            return template;
+          };
+
+        done(); // call done so that the next test can run
+    });
+        
+    it('it uses the overriden layout', function () {
+      
+        view.sendPage(request, response, 'home');
+    });
+  });
+  
+  describe('Given a request for a valid site home page and an overidden layout', function() {
+    
+    beforeEach(function(done) {
+        /* 
+         * before each test, reset the REQUEST and RESPONSE variables 
+         * to be send into the middle ware
+        **/
+        request = httpMocks.createRequest({
+            method: 'GET',
+            url: '/',
+            headers: {
+                host: 'www.example.com'
+            }
+        });
+        response = httpMocks.createResponse();
+        response.locals = {
+            site: {
+              site: 'example',
+              view: {
+                layout: 'mobile_first'
+              }
+            }
+          };
+        response.marko = function(template, data) {
+            return template;
+          };
+
+        done(); // call done so that the next test can run
+    });
+        
+    it('it uses the overriden layout', function () {
+      
+        view.sendPage(request, response, 'home');
+    });
+  });
+  
 });

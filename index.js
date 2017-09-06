@@ -5,7 +5,7 @@
 /**
  *  Use Marko and ActiveRules site data to render pages.
  */
-var viewResolver = require('/home/brian/sandbox/activerules-view-resolver');
+var viewResolver = require('activerules-view-resolver');
 
 // Create the return object
 var AR = function () {};
